@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body style="background-image: url(bg.jpg);">
+	<h1 class="score ml-5" >очки: 0</h1>
+	<script type="text/javascript"> 
+		let score = 0
+		let timer = function(){
+			let randMl = Math.random()*1000
+			let roundMl = Math.round(randMl) 
+
+			let randTp= Math.random()*500
+			let roundTp= Math.round(randTp) 
+
+			var elem = document.createElement('img');
+			document.body.appendChild(elem)
+			elem.style.height="200px"
+			elem.style.width="200px"
+          	elem.src = "img.svg" ;
+          	elem.style.position = "absolute";
+          	elem.style.marginLeft=roundMl + "px"
+          	elem.style.marginTop=roundTp + "px"
+
+          	elem.onclick = function(){
+            elem.style.display = "none";
+            document.querySelector(".score").innerHTML = "очки: " + score 
+            score=score+1
+        	}
+		}
+			setInterval(timer,1000)
+	</script>
+</body>
+</html>
